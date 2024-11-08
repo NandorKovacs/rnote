@@ -321,6 +321,7 @@ fn reject_pointer_input(event: &gdk::Event, touch_drawing: bool) -> bool {
 
 fn event_is_stylus(event: &gdk::Event) -> bool {
     // As in gtk4 'gtkgesturestylus.c:106' we detect if the pointer is a stylus when it has a device tool
+    println!("is tool: {}", event.device_tool().is_some());
     event.device_tool().is_some()
 }
 
